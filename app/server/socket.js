@@ -147,7 +147,7 @@ module.exports = function appSocket(socket) {
             conn.end();
             return;
           }
-          stream.write(`nohup asciinema rec /opt/${socket.request.session.username}@${socket.request.sessionID}_${socket.id}.rec && \n`);
+          stream.write(`nohup asciinema rec /opt/${socket.request.session.username}@${socket.request.sessionID}_${socket.id}.rec & \n`);
           socket.on('data', (data) => {
             stream.write(data);
           });
